@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import styled from "styled-components";
 
 const Nav = () => {
   const [user] = useAuthState(auth);
@@ -10,9 +11,14 @@ const Nav = () => {
   };
 
   return (
-    <div>
+    <StyleNav>
       <Link to="/"> Home</Link>
-      <Link to="/login"> Login</Link>
+      {user ? (
+        <Link to="/add-tweet">Add Tweet</Link>
+      ) : (
+        <Link to="/login"> Login</Link>
+      )}
+
       <div>
         {user && (
           <div>
@@ -28,8 +34,20 @@ const Nav = () => {
           </div>
         )}
       </div>
-    </div>
+    </StyleNav>
   );
 };
 
+const StyleNav = styled.div`
+display: flex;
+justify-content: space-around;
+align-items: center;
+font-size: 2rem;
+height: 6rem;
+background-color: black;
+color: white;
+`;
+
+
 export default Nav;
+
