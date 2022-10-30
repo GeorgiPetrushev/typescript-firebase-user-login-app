@@ -43,7 +43,7 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 font-size: 2rem;
-height: 6rem;
+height: 10rem;
 background-color: black;
 color: white;
 `;
