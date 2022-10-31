@@ -1,9 +1,16 @@
-
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../config/firebase";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const readData = async () => {
+    const querySnapshot = await getDocs(collection(db, "tweet"));
+    querySnapshot.forEach((doc) => {
+      console.log(doc.data());
+    });
+  };
+  readData();
 
-export default Home
+  return <div>Home</div>;
+};
+
+export default Home;
