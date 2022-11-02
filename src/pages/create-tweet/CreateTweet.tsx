@@ -7,13 +7,20 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { collection, addDoc } from "firebase/firestore";
 import { db, auth } from "../../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+// navigate to different page
+import { useNavigate } from "react-router-dom";
 
 interface CreateTweetData {
   title: string;
   tweet: string;
 }
 
+
+
+
 const CreateTweet = () => {
+  //navigate
+  let navigate = useNavigate()
   // get user info
   const [user] = useAuthState(auth);
 
@@ -41,8 +48,9 @@ const CreateTweet = () => {
       const docRef = await addDoc(collection(db, "tweet"), {
         ...data,
         username: user?.displayName,
-        id: user?.uid,
+        userId: user?.uid,
       });
+      navigate("/");
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);

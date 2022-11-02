@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/main/Home";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Tweet from "./pages/create-tweet/Tweet";
