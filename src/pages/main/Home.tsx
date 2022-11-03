@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs  } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { useEffect, useState } from "react";
 import Post from "./Post";
