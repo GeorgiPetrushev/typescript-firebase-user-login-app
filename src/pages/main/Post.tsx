@@ -25,10 +25,11 @@ const Post = (props: Props) => {
   const addLike = async () => {
     await addDoc(likesRef, { userId: user?.uid, postId: post.id });
     getLikes();
+    
   };
 
   useEffect(() => {
-    
+    getLikes();
   },[]);
 
   return (
