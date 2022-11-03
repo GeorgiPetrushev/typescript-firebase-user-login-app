@@ -63,7 +63,7 @@ const CreateTweet = () => {
       <p>{errors.title?.message}</p>
       <textarea placeholder="Tweet ..." {...register("tweet")} />
       <p>{errors.tweet?.message}</p>
-      <button type="submit"> Post</button>
+      <button type="submit">Tweet</button>
     </form>
   );
 };

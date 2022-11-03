@@ -46,9 +46,22 @@ const StyleNav = styled.div`
   justify-content: space-around;
   align-items: center;
   font-size: 2rem;
-  height: 10vh;
+  min-height: 10vh;
   background-color: black;
   color: white;
+  a{
+    color: white;
+    &:hover{
+      color: rgb(28,155,238,0.9);
+    }
+  }
+  
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
 `;
 const StyleUserInfo = styled.div`
   
