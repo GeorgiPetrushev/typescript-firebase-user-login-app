@@ -1,8 +1,9 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { useEffect, useState } from "react";
+import Post from "./Post";
 
-interface Post {
+export interface Post {
   id: string;
   userId: string;
   title: string;
@@ -26,8 +27,8 @@ const Home = () => {
   return (
     <div className="home=page">
       <div className="tweet-list-blo">
-        {tweetList?.map((arr) => (
-          <div key={arr.id}> {arr.tweet}</div>
+        {tweetList?.map((post:Post) => (
+          <Post post={post}/>
         ))}
       </div>
     </div>
