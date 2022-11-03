@@ -21,17 +21,20 @@ const Nav = () => {
 
       <div>
         {user && (
-          <div>
+          <StyleUserInfo>
             {" "}
             <p>{auth.currentUser?.displayName}</p>
-            <img
-              src={auth.currentUser?.photoURL || ""}
-              alt="missing pic"
-              width="100"
-              height="100"
-            ></img>
-            <button onClick={logOut}>Log Out</button>
-          </div>
+          
+              <img
+                src={auth.currentUser?.photoURL || ""}
+                alt="missing pic"
+                width="100"
+                height="100"
+              ></img>
+              <button onClick={logOut} className="logout">
+                Log Out
+              </button>
+          </StyleUserInfo>
         )}
       </div>
     </StyleNav>
@@ -39,15 +42,32 @@ const Nav = () => {
 };
 
 const StyleNav = styled.div`
-display: flex;
-justify-content: space-around;
-align-items: center;
-font-size: 2rem;
-height: 10rem;
-background-color: black;
-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  height: 10vh;
+  background-color: black;
+  color: white;
+`;
+const StyleUserInfo = styled.div`
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img{
+    margin: 0 2rem;
+    border-radius:5rem;
+    height: 3rem;
+    width: 3rem;
+  }
+  button{
+    background-color: rgb(28,155,239);
+    border: none;
+    height: 2rem;
+    width: 7rem;
+    font-size: 1rem;
+  }
 `;
 
-
 export default Nav;
-

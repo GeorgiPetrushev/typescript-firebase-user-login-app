@@ -33,15 +33,15 @@ const Post = (props: Props) => {
   },[]);
 
   return (
-    <div key={post.id}>
+    <div key={post.id} className="tweet">
       <div className="title">
-        <h1>{post.title}</h1>
+        <h1>tweet : {post.title}</h1>
       </div>
       <div className="tweet">
         <h3>{post.tweet}</h3>
       </div>
       <div className="footer">
-        <h4>@{post.username}</h4>
+        <h5>User Name @{post.username}</h5>
         <button onClick={addLike}>Like</button>
         {likeAmount && <p> Likes : {likeAmount}</p>}
       </div>
