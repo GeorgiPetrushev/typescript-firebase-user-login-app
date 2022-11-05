@@ -49,6 +49,7 @@ const StyleNav = styled.div`
   min-height: 10vh;
   background-color: black;
   color: white;
+  
   a{
     color: white;
     &:hover{
